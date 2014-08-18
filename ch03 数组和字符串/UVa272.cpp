@@ -1,6 +1,5 @@
 // UVa272 Tex Quotes
 // Rujia Liu
-// Kevin Deng test
 #include<stdio.h>
 int main() { 
   int c, q = 1;
