@@ -1,6 +1,9 @@
 ﻿#include<iostream>
 using namespace std;
 
+
+//此段告知读者，模版的基本写法template代表申明模版，typename(也可用class)声明变量，
+//之后就可以用T（T是常用写法，其实可以任意用个字符串）代表任意一种变量类型
 template <typename T>
 struct Point {
   T x, y;

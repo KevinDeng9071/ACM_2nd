@@ -28,6 +28,7 @@ int sum(int* begin, int* end) {
 */
 
 // 下面是模板函数sum，修改自上述int版的sum函数
+// 由于T可以代替任何数据类型，所以可以代替上述结构体（类）
 template<typename T>
 T sum(T* begin, T* end) {
   T *p = begin;
