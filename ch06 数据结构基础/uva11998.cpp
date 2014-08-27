@@ -29,3 +29,79 @@ int main() {
   }
   return 0;
 }
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+struct Node
+{
+  char c;
+  struct Node * next;
+}
+
+int main()
+{
+  string s;
+  cin >> s;
+  cout << s;
+  Node node {};
+  Node nnode {};
+  Node * pre, * first ,* last;
+  pre = first = last = node.next;
+  int in = 0;
+  for (int i = 0; i < s.size(); ++i)
+  {
+    if (s[i] == '[')
+    {
+      in = 1;
+      first = node.next;
+      pre = node.next;
+    }
+    else if (s[i] == ']')
+    {
+      pre = last;
+      in = 0;
+    }
+    else 
+    {
+      nnode.c = s[i];
+      *pre = nnode;
+      pre = nnode.next;
+      if (in)
+      nnode.next = *first;
+      else
+      {
+      nnode.next = null;
+      last = nnode.next;
+      }
+    }
+  }
+  nnode = node.next;
+  while (node.next != null)
+  {
+    cout << nnode.c;
+    nnode = nnode.next;
+  }
+  cout << endl;
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
