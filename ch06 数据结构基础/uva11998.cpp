@@ -39,24 +39,22 @@ struct Node
 {
   char c;
   struct Node * next;
-}
+};
 
 int main()
 {
   string s;
   cin >> s;
-  cout << s;
+  cout << s << endl;
   Node node {};
-  Node nnode {};
-  Node * pre, * first ,* last;
-  pre = first = last = node.next;
+  Node * pre, * last;
+  pre = last = node.next;
   int in = 0;
   for (int i = 0; i < s.size(); ++i)
   {
     if (s[i] == '[')
     {
       in = 1;
-      first = node.next;
       pre = node.next;
     }
     else if (s[i] == ']')
@@ -66,23 +64,23 @@ int main()
     }
     else 
     {
+      Node nnode {};
       nnode.c = s[i];
-      *pre = nnode;
-      pre = nnode.next;
+      nnode.next = pre;
+      pre = &nnode;
       if (in)
-      nnode.next = *first;
-      else
+      pre = nnode.next;
       {
-      nnode.next = null;
-      last = nnode.next;
+      pre = nnode.next;
+      last = pre;
       }
     }
   }
-  nnode = node.next;
+  Node nnode = *node.next;
   while (node.next != null)
   {
     cout << nnode.c;
-    nnode = nnode.next;
+    nnode = *nnode.next;
   }
   cout << endl;
   return 0;
